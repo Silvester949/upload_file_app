@@ -3,6 +3,7 @@ import Upload from "./components/Upload";
 import firebase from "firebase/app";
 import { projectStorage } from "./firebase/config";
 import "./App.css";
+import { FileTypes } from "./enums/FileTypes";
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.files);
     return (
       <div className="App">
         <div className="card">
@@ -85,25 +87,17 @@ class App extends Component {
                       <img
                         className="image-preview"
                         src={
-                          item.file.type === "image/jpeg" ||
-                          item.file.type === "image/jpg" ||
-                          item.file.type === "image/png" ||
-                          item.file.type === "image/gif"
+                          FileTypes.image.includes(item.file.type)
                             ? item.url
-                            : item.file.type === "audio/mpeg" ||
-                              item.file.type === "audio/wav" ||
-                              item.file.type === "audio/aac"
-                            ? "mp3.png"
-                            : item.file.type === "video/mpeg" ||
-                              item.file.type === "audio/wav"
-                            ? "avi.png"
-                            : item.file.type === "application/msword" ||
-                              item.file.type === "application/vnd.ms-excel"
+                            : FileTypes.audio.includes(item.file.type)
+                            ? "audio.png"
+                            : FileTypes.video.includes(item.file.type)
+                            ? "video.png"
+                            : FileTypes.msDoc.includes(item.file.type)
                             ? "doc.png"
-                            : item.file.type === "application/pdf"
+                            : FileTypes.pdf.includes(item.file.type)
                             ? "pdf.png"
-                            : item.file.type === "application/zip" ||
-                              item.file.type === "application/x-zip-compressed"
+                            : FileTypes.archive.includes(item.file.type)
                             ? "zip.png"
                             : "search.png"
                         }
