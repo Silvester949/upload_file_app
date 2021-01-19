@@ -1,38 +1,134 @@
-.App {
+.card {
+  margin: auto;
+  position: relative;
+  top: 10%;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  text-align: center;
+  font-weight: 350;
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+  padding-bottom: 100px;
+}
+
+.files {
+  margin-left: 50px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drag-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 20px;
+  margin: auto;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.choose-file-btn {
+  margin: auto;
+  width: 30%;
+  min-width: 100px;
+  margin-top: 20px;
+}
+
+#choose-file-btn-label {
+  background-color: #004cfc;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.files-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.upload-btn {
+  background-color: #004cfc;
+  border-radius: 0.3rem;
+  border: none;
+  color: white;
+  padding: 7px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  align-self: flex-start;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.preview-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.preview-text {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.image-preview {
+  width: 70px;
+  height: auto;
+}
+
+.uploaded {
+  text-align: center;
+  margin-top: 30px;
+  color: green;
+  align-self: center;
+}
+
+@media only screen and (max-width: 1467px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  .files {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .files-header {
+    flex-direction: column;
+    align-items: center;
   }
 }
