@@ -1,0 +1,21 @@
+.drop-container {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  width: 100%;
+}
+
+.drag-in {
+  background-color: rgba(176, 176, 176, 0.7);
+}
+
+.upload-box {
+  border: dashed grey 3px;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}

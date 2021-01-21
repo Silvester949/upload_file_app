@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./css/Upload.css";
+import "./css/DragAndDrop.css";
 
-class Upload extends Component {
+class DragAndDrop extends Component {
   state = {
     drag: false,
   };
@@ -60,30 +60,14 @@ class Upload extends Component {
   render() {
     return (
       <div
-        className={`${this.state.drag ? "drag-in" : ""}`}
-        style={{
-          display: "inline-block",
-          position: "relative",
-          width: "auto",
-        }}
+        className={`drop-container ${this.state.drag ? "drag-in" : ""}`}
         ref={this.dropRef}
       >
-        <div
-          style={{
-            border: "dashed grey 3px",
-            backgroundColor: "rgba(255,255,255,.7)",
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            zIndex: 9999,
-          }}
-        ></div>
+        <div className="upload-box"></div>
         {this.props.children}
       </div>
     );
   }
 }
 
-export default Upload;
+export default DragAndDrop;
